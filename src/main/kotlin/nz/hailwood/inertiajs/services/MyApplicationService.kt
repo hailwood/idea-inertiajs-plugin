@@ -1,6 +1,6 @@
-package com.github.hailwood.inertiajs.services
+package nz.hailwood.inertiajs.services
 
-import com.github.hailwood.inertiajs.MyBundle
+import nz.hailwood.inertiajs.MyBundle
 
 class MyApplicationService {
 

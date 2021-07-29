@@ -1,6 +1,6 @@
-package com.github.hailwood.inertiajs.listeners
+package nz.hailwood.inertiajs.listeners
 
-import com.github.hailwood.inertiajs.services.MyProjectService
+import nz.hailwood.inertiajs.services.MyProjectService
 import com.intellij.openapi.components.service
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener

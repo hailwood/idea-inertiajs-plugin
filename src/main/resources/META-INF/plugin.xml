@@ -1,5 +1,5 @@
 <idea-plugin>
-    <id>com.github.hailwood.inertiajs</id>
+    <id>nz.hailwood.inertiajs</id>
     <!--suppress PluginXmlCapitalization -->
     <name>Inertia.js Support</name>
     <vendor>hailwood</vendor>
@@ -10,12 +10,16 @@
     <depends>com.jetbrains.php</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.hailwood.inertiajs.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.hailwood.inertiajs.services.MyProjectService"/>
+        <applicationService serviceImplementation="nz.hailwood.inertiajs.services.MyApplicationService"/>
+        <projectService serviceImplementation="nz.hailwood.inertiajs.services.MyProjectService"/>
+
+        <!--suppress PluginXmlValidity -->
+        <codeInsight.lineMarkerProvider implementationClass="nz.hailwood.inertiajs.linemarkerprovider.InertiaRenderLineMarkerProvider"
+                                        language="PHP"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.hailwood.inertiajs.listeners.MyProjectManagerListener"
+        <listener class="nz.hailwood.inertiajs.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>
