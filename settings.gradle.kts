@@ -1,1 +1,1 @@
-rootProject.name = "idea-inertiajs-plugin"
+rootProject.name = "Inertia.js Support"

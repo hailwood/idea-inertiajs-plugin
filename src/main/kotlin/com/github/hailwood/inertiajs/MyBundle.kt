@@ -1,4 +1,4 @@
-package com.github.hailwood.ideainertiajsplugin
+package com.github.hailwood.inertiajs
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls

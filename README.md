@@ -1,4 +1,4 @@
-# idea-inertiajs-plugin
+# PhpStorm and IntelliJ IDEA Inertia.js Plugin
 
 ![Build](https://github.com/hailwood/idea-inertiajs-plugin/workflows/Build/badge.svg)
 [![Version](https://img.shields.io/jetbrains/plugin/v/PLUGIN_ID.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
@@ -14,27 +14,14 @@
 - [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
 
 <!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+Provides support in PhpStorm and IntelliJ IDEA Ultimate for [Inertia.js](https://inertiajs.com/).
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
+- [💡 GitHub Issues](https://github.com/hailwood/idea-inertiajs-plugin/issues): feature requests and bug reports
+- [🙏🏼 Patreon](https://www.patreon.com/hailwood): Consider supporting this project if it helped you 😊
+- [🔌 Plugin Page](https://plugins.jetbrains.com/plugin/123456-idea-inertiajs/): Get the plugin for PHPStorm
 <!-- Plugin description end -->
 
-## Installation
-
-- Using IDE built-in plugin system:
-  
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "idea-inertiajs-plugin"</kbd> >
-  <kbd>Install Plugin</kbd>
-  
-- Manually:
-
-  Download the [latest release](https://github.com/hailwood/idea-inertiajs-plugin/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
-
----
-Plugin based on the [IntelliJ Platform Plugin Template][template].
-
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
+## Credits
+- [Inertia.js](https://inertiajs.com/) - The reason for this plugin
+- [Robbin "Roboroads" Schepers](https://github.com/Roboroads) - Inspiration for plugin structure

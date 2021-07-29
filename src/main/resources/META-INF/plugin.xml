@@ -1,19 +1,21 @@
 <idea-plugin>
-    <id>com.github.hailwood.ideainertiajsplugin</id>
-    <name>idea-inertiajs-plugin</name>
+    <id>com.github.hailwood.inertiajs</id>
+    <!--suppress PluginXmlCapitalization -->
+    <name>Inertia.js Support</name>
     <vendor>hailwood</vendor>
 
     <!-- Product and plugin compatibility requirements -->
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.jetbrains.php</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.hailwood.ideainertiajsplugin.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.hailwood.ideainertiajsplugin.services.MyProjectService"/>
+        <applicationService serviceImplementation="com.github.hailwood.inertiajs.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.github.hailwood.inertiajs.services.MyProjectService"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.hailwood.ideainertiajsplugin.listeners.MyProjectManagerListener"
+        <listener class="com.github.hailwood.inertiajs.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
 </idea-plugin>

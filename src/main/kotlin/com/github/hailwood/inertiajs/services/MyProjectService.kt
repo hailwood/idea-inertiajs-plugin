@@ -1,6 +1,6 @@
-package com.github.hailwood.ideainertiajsplugin.services
+package com.github.hailwood.inertiajs.services
 
-import com.github.hailwood.ideainertiajsplugin.MyBundle
+import com.github.hailwood.inertiajs.MyBundle
 import com.intellij.openapi.project.Project
 
 class MyProjectService(project: Project) {
