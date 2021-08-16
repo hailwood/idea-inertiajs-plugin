@@ -14,7 +14,6 @@ import com.intellij.psi.PsiManager
 import com.intellij.psi.PsiReferenceBase
 import nz.hailwood.inertiajs.displayPath
 import nz.hailwood.inertiajs.settings.InertiaSettingsService
-import org.jetbrains.io.LocalFileFinder
 import java.io.File
 
 class InertiaPageReference(element: PsiElement, textRange: TextRange) : PsiReferenceBase<PsiElement?>(element, textRange) {
