@@ -4,12 +4,11 @@ import com.intellij.codeInsight.daemon.GutterIconNavigationHandler
 import com.intellij.codeInsight.daemon.LineMarkerInfo
 import com.intellij.codeInsight.daemon.LineMarkerProviderDescriptor
 import com.intellij.find.actions.ShowUsagesAction
+import com.intellij.lang.javascript.psi.JSFile
 import com.intellij.openapi.editor.markup.GutterIconRenderer
 import com.intellij.openapi.project.DumbService
 import com.intellij.openapi.util.TextRange
 import com.intellij.psi.PsiElement
-import com.intellij.psi.PsiFile
-import com.intellij.psi.search.GlobalSearchScope
 import com.intellij.psi.search.searches.ReferencesSearch
 import com.intellij.psi.util.PsiEditorUtil
 import com.intellij.ui.awt.RelativePoint
@@ -21,9 +20,9 @@ class InertiaRenderLineMarkerProvider : LineMarkerProviderDescriptor(), GutterIc
     override fun getName(): String = "InertiaRenderLineMarkerProvider"
 
     override fun collectSlowLineMarkers(elements: MutableList<out PsiElement>, result: MutableCollection<in LineMarkerInfo<*>>) {
-        val psiFile = elements.firstOrNull { it is PsiFile } ?: return
+        val psiFile = elements.firstOrNull { it is JSFile } ?: return
 
-        val hasReferences = ReferencesSearch.search(psiFile, GlobalSearchScope.projectScope(psiFile.project)).anyMatch { it is InertiaPageReference }
+        val hasReferences = ReferencesSearch.search(psiFile, psiFile.useScope).anyMatch { it is InertiaPageReference }
 
         if (!hasReferences) return
 
