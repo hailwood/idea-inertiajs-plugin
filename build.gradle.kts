@@ -109,6 +109,6 @@ tasks {
     }
 
     runIde {
-        jvmArgs("-Xmx8196m")
+        jvmArgs("-Xmx8196m", "--add-exports", "java.base/jdk.internal.vm=ALL-UNNAMED")
     }
 }
