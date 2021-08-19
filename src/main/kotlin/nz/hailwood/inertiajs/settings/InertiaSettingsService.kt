@@ -34,5 +34,4 @@ class InertiaSettingsService : PersistentStateComponent<InertiaSettingsService> 
         }
     }
 
-
 }

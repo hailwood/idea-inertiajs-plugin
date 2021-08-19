@@ -4,7 +4,6 @@ import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory
 import com.intellij.openapi.options.SearchableConfigurable
 import com.intellij.openapi.project.Project
-import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.ui.TextFieldWithBrowseButton
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.ui.DocumentAdapter
@@ -20,7 +19,6 @@ import javax.swing.JComponent
 import javax.swing.JTextField
 import javax.swing.UIManager
 import javax.swing.event.DocumentEvent
-
 
 class InertiaSettingsInterface(project: Project) : SearchableConfigurable {
 
@@ -71,7 +69,6 @@ class InertiaSettingsInterface(project: Project) : SearchableConfigurable {
             textField.emptyText.text = defaultValue
         }
     }
-
 
     override fun createComponent(): JComponent {
         return FormBuilder.createFormBuilder()

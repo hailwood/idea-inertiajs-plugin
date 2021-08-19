@@ -14,7 +14,7 @@
 
     <extensions defaultExtensionNs="com.intellij">
 
-        <codeInsight.lineMarkerProvider language="JavaScript" implementationClass="nz.hailwood.inertiajs.InertiaRenderLineMarkerProvider" />
+        <codeInsight.lineMarkerProvider language="JavaScript" implementationClass="nz.hailwood.inertiajs.InertiaRenderLineMarkerProvider"/>
 
         <spellchecker.bundledDictionaryProvider implementation="nz.hailwood.inertiajs.dictionary.InertiaBundledDictionaryProvider"/>
 
@@ -24,8 +24,8 @@
 
         <!--suppress PluginXmlCapitalization -->
         <projectConfigurable parentId="language" instance="nz.hailwood.inertiajs.settings.InertiaSettingsInterface"
-                                 id="nz.hailwood.inertiajs.settings2.InertiaSettingsConfigurable"
-                                 displayName="Inertia.js"/>
+                             id="nz.hailwood.inertiajs.settings.InertiaSettingsConfigurable"
+                             displayName="Inertia.js"/>
 
     </extensions>
 

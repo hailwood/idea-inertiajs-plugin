@@ -15,7 +15,6 @@ import com.intellij.ui.awt.RelativePoint
 import nz.hailwood.inertiajs.navigation.InertiaPageReference
 import java.awt.event.MouseEvent
 
-
 class InertiaRenderLineMarkerProvider : LineMarkerProviderDescriptor(), GutterIconNavigationHandler<PsiElement> {
     override fun getName(): String = "InertiaRenderLineMarkerProvider"
 
@@ -43,7 +42,6 @@ class InertiaRenderLineMarkerProvider : LineMarkerProviderDescriptor(), GutterIc
         if (DumbService.getInstance(psiFile.project).isDumb) {
             return
         }
-
 
         ShowUsagesAction.startFindUsages(
             psiFile,

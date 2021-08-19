@@ -29,7 +29,7 @@ class InertiaPageReference(element: PsiElement, textRange: TextRange) : PsiRefer
     }.toTypedArray()
 
     private fun locateReferences(project: Project, name: String?): List<PsiFile> {
-        val pagesDir =  VfsUtil.findFileByIoFile(File(InertiaSettingsService.inertiaPagesRoot(project)), true) ?: return emptyList()
+        val pagesDir = VfsUtil.findFileByIoFile(File(InertiaSettingsService.inertiaPagesRoot(project)), true) ?: return emptyList()
 
         val references = mutableListOf<PsiFile>()
 
