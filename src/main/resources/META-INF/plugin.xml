@@ -18,6 +18,10 @@
 
         <spellchecker.bundledDictionaryProvider implementation="nz.hailwood.inertiajs.dictionary.InertiaBundledDictionaryProvider"/>
 
+        <notificationGroup id="Inertia Plugin" displayType="BALLOON"/>
+
+        <postStartupActivity implementation="nz.hailwood.inertiajs.InertiaStartupActivity"/>
+
         <psi.referenceContributor implementation="nz.hailwood.inertiajs.navigation.InertiaPageReferenceContributor" language="PHP" order="first"/>
 
         <projectService serviceImplementation="nz.hailwood.inertiajs.settings.InertiaSettingsService"/>
@@ -33,4 +37,7 @@
     <applicationListeners>
     </applicationListeners>
 
+    <actions>
+        <action id="nz.hailwood.inertiajs.settings.ShowSettingsAction" class="nz.hailwood.inertiajs.settings.ShowSettingsAction"/>
+    </actions>
 </idea-plugin>
