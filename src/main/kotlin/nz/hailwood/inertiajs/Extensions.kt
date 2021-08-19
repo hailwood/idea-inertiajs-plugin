@@ -1,12 +1,30 @@
 package nz.hailwood.inertiajs
 
+import com.intellij.json.psi.JsonFile
+import com.intellij.lang.javascript.buildTools.npm.PackageJsonUtil
 import com.intellij.openapi.project.Project
+import com.intellij.openapi.project.guessProjectDir
 import com.intellij.openapi.vfs.VirtualFile
-import com.jetbrains.php.PhpIndex
+import com.intellij.psi.PsiManager
+import com.jetbrains.php.composer.ComposerConfigUtils
+import com.jetbrains.php.composer.ComposerUtils
 import nz.hailwood.inertiajs.settings.InertiaSettingsService
 
 val Project.isInertia: Boolean
-    get() = PhpIndex.getInstance(this).getClassesByFQN("\\Inertia\\Inertia").isNotEmpty()
+    get() = this.isInertiaFromComposer || this.isInertiaFromPackageJson
+
+val Project.isInertiaFromComposer: Boolean
+    get() {
+        val composerJsonVirtualFile = ComposerUtils.findFileInProject(this, "composer.json") ?: return false
+        return ComposerConfigUtils.getInstalledPackagesFromConfig(composerJsonVirtualFile).any { it.name == "inertiajs/inertia-laravel" }
+    }
+
+val Project.isInertiaFromPackageJson: Boolean
+    get() {
+        val packageJsonVirtualFile = PackageJsonUtil.findChildPackageJsonFile(this.guessProjectDir()) ?: return false
+        val packageJson = PsiManager.getInstance(this).findFile(packageJsonVirtualFile) ?: return false
+        return PackageJsonUtil.findDependencyByName(packageJson as JsonFile, "@inertiajs/inertia") != null
+    }
 
 val Project.isNotInertia: Boolean
     get() = !this.isInertia
