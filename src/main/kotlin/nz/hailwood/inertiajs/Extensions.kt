@@ -9,6 +9,7 @@ import com.intellij.psi.PsiManager
 import com.jetbrains.php.composer.ComposerConfigUtils
 import com.jetbrains.php.composer.ComposerUtils
 import nz.hailwood.inertiajs.settings.InertiaSettingsService
+import java.io.File
 
 val Project.isInertia: Boolean
     get() = this.isInertiaFromComposer || this.isInertiaFromPackageJson
@@ -16,7 +17,8 @@ val Project.isInertia: Boolean
 val Project.isInertiaFromComposer: Boolean
     get() {
         val composerJsonVirtualFile = ComposerUtils.findFileInProject(this, "composer.json") ?: return false
-        return ComposerConfigUtils.getInstalledPackagesFromConfig(composerJsonVirtualFile).any { it.name == "inertiajs/inertia-laravel" }
+        return ComposerConfigUtils.getInstalledPackagesFromConfig(composerJsonVirtualFile)
+            .any { it.name == "inertiajs/inertia-laravel" }
     }
 
 val Project.isInertiaFromPackageJson: Boolean
@@ -30,6 +32,7 @@ val Project.isNotInertia: Boolean
     get() = !this.isInertia
 
 fun VirtualFile.displayPath(project: Project): String {
-    val pagesRoot = InertiaSettingsService.inertiaPagesRoot(project)
-    return this.path.removePrefix("${pagesRoot}/").removeSuffix(".${this.extension}")
+    val pagesRoot = InertiaSettingsService.inertiaPagesRoot(project).plus("/").replace(File.separator, "/")
+
+    return this.path.removePrefix(pagesRoot).removeSuffix(".${this.extension}")
 }

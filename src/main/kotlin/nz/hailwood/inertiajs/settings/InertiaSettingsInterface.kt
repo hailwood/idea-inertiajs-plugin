@@ -15,6 +15,7 @@ import com.intellij.util.ui.FormBuilder
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
 import java.awt.Color
+import java.io.File
 import javax.swing.JComponent
 import javax.swing.JTextField
 import javax.swing.UIManager
@@ -36,7 +37,10 @@ class InertiaSettingsInterface(project: Project) : SearchableConfigurable {
             FileChooserDescriptorFactory.createSingleFolderDescriptor()
         )
 
-        setupTextFieldDefaultValue(inertiaPagesRootField.textField, settings.defaultInertiaPagesRoot(project))
+        setupTextFieldDefaultValue(
+            inertiaPagesRootField.textField,
+            settings.defaultInertiaPagesRoot(project).replace("/", File.separator)
+        )
     }
 
     @Suppress("DialogTitleCapitalization")
@@ -62,7 +66,8 @@ class InertiaSettingsInterface(project: Project) : SearchableConfigurable {
         if (StringUtil.isEmptyOrSpaces(defaultValue)) return
         textField.document.addDocumentListener(object : DocumentAdapter() {
             override fun textChanged(e: DocumentEvent) {
-                textField.foreground = if (defaultValue == textField.text) getDefaultValueColor() else getChangedValueColor()
+                textField.foreground =
+                    if (defaultValue == textField.text) getDefaultValueColor() else getChangedValueColor()
             }
         })
         if (textField is JBTextField) {
