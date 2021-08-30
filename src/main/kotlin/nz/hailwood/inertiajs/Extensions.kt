@@ -33,7 +33,7 @@ val Project.isNotInertia: Boolean
     get() = !this.isInertia
 
 fun VirtualFile.displayPath(project: Project): String {
-    val pagesRoot = FileUtil.toSystemDependentName(InertiaSettingsService.inertiaPagesRoot(project).plus("/"))
+    val pagesRoot = FileUtil.toSystemIndependentName(InertiaSettingsService.inertiaPagesRoot(project).plus("/"))
 
-    return this.path.removePrefix(pagesRoot).removeSuffix(".${this.extension}")
+    return FileUtil.toSystemIndependentName(this.path).removePrefix(pagesRoot).removeSuffix(".${this.extension}")
 }
