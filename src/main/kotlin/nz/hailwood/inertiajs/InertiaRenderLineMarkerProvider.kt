@@ -12,6 +12,7 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.search.searches.ReferencesSearch
 import com.intellij.psi.util.PsiEditorUtil
 import com.intellij.ui.awt.RelativePoint
+import nz.hailwood.inertiajs.messages.InertiaBundle
 import nz.hailwood.inertiajs.navigation.InertiaPageReference
 import java.awt.event.MouseEvent
 
@@ -29,10 +30,10 @@ class InertiaRenderLineMarkerProvider : LineMarkerProviderDescriptor(), GutterIc
             psiFile,
             TextRange(0, 0),
             InertiaIcons.Reference,
-            { "Find usages of this page" },
+            { InertiaBundle.message("line.marker.render.description") },
             this,
             GutterIconRenderer.Alignment.RIGHT,
-            { "Find usages of this page" }
+            { InertiaBundle.message("line.marker.render.description") }
         ))
     }
 

@@ -1,6 +1,7 @@
 # PhpStorm and IntelliJ IDEA Inertia.js Plugin
 
 ![Build](https://github.com/hailwood/idea-inertiajs-plugin/workflows/Build/badge.svg)
+[![Twitter Follow](https://img.shields.io/twitter/follow/Hailwoodnz?style=flat)][jb:twitter]
 [![Version](https://img.shields.io/jetbrains/plugin/v/17435.svg)](https://plugins.jetbrains.com/plugin/17435)
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/17435.svg)](https://plugins.jetbrains.com/plugin/17435)
 

@@ -14,6 +14,7 @@ import com.intellij.uiDesigner.core.Spacer
 import com.intellij.util.ui.FormBuilder
 import com.intellij.util.ui.JBUI
 import com.intellij.util.ui.UIUtil
+import nz.hailwood.inertiajs.messages.InertiaBundle
 import java.awt.Color
 import java.io.File
 import javax.swing.JComponent
@@ -31,7 +32,7 @@ class InertiaSettingsInterface(project: Project) : SearchableConfigurable {
 
     init {
         inertiaPagesRootField.addBrowseFolderListener(
-            "Path to Pages Root",
+            InertiaBundle.message("settings.pages.root.browse.title"),
             null,
             project,
             FileChooserDescriptorFactory.createSingleFolderDescriptor()
@@ -77,13 +78,13 @@ class InertiaSettingsInterface(project: Project) : SearchableConfigurable {
 
     override fun createComponent(): JComponent {
         return FormBuilder.createFormBuilder()
-            .addLabeledComponent(JBLabel("Path to pages root:"), inertiaPagesRootField, 1, false)
+            .addLabeledComponent(JBLabel(InertiaBundle.message("settings.pages.root.label")), inertiaPagesRootField, 1, false)
             .addComponentToRightColumn(HyperlinkLabel().apply {
                 @Suppress("UnstableApiUsage")
-                setTextWithHyperlink("This should be set to the same location Inertia.js <hyperlink>resolves your pages from</hyperlink>.")
+                setTextWithHyperlink(InertiaBundle.message("settings.pages.root.description"))
                 JBUI.CurrentTheme.ContextHelp.FOREGROUND
                 UIUtil.applyStyle(UIUtil.ComponentStyle.SMALL, this)
-                addHyperlinkListener { BrowserUtil.browse("https://inertiajs.com/client-side-setup#initialize-app") }
+                addHyperlinkListener { BrowserUtil.browse(InertiaBundle.message("settings.pages.root.description.link")) }
             }, 1)
             .addComponentFillVertically(Spacer(), 0)
             .panel
