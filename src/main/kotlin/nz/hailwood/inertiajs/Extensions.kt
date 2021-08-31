@@ -4,6 +4,7 @@ import com.intellij.json.psi.JsonFile
 import com.intellij.lang.javascript.buildTools.npm.PackageJsonUtil
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessProjectDir
+import com.intellij.openapi.util.io.FileUtil
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.PsiManager
 import com.jetbrains.php.composer.ComposerConfigUtils
@@ -32,7 +33,7 @@ val Project.isNotInertia: Boolean
     get() = !this.isInertia
 
 fun VirtualFile.displayPath(project: Project): String {
-    val pagesRoot = InertiaSettingsService.inertiaPagesRoot(project).plus("/").replace(File.separator, "/")
+    val pagesRoot = FileUtil.toSystemDependentName(InertiaSettingsService.inertiaPagesRoot(project).plus("/"))
 
     return this.path.removePrefix(pagesRoot).removeSuffix(".${this.extension}")
 }
