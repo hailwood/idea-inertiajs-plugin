@@ -16,20 +16,20 @@
 
         <codeInsight.lineMarkerProvider language="JavaScript" implementationClass="nz.hailwood.inertiajs.InertiaRenderLineMarkerProvider"/>
 
-        <spellchecker.bundledDictionaryProvider implementation="nz.hailwood.inertiajs.dictionary.InertiaBundledDictionaryProvider"/>
-
         <notificationGroup id="Inertia Plugin" displayType="BALLOON"/>
 
         <postStartupActivity implementation="nz.hailwood.inertiajs.InertiaStartupActivity"/>
 
-        <psi.referenceContributor implementation="nz.hailwood.inertiajs.navigation.InertiaPageReferenceContributor" language="PHP" order="first"/>
-
         <projectService serviceImplementation="nz.hailwood.inertiajs.settings.InertiaSettingsService"/>
 
-        <!--suppress PluginXmlCapitalization -->
+        <psi.referenceContributor implementation="nz.hailwood.inertiajs.navigation.InertiaPageReferenceContributor" language="PHP" order="first"/>
+
         <projectConfigurable parentId="language" instance="nz.hailwood.inertiajs.settings.InertiaSettingsInterface"
-                             id="nz.hailwood.inertiajs.settings.InertiaSettingsConfigurable"
-                             displayName="Inertia.js"/>
+                             id="nz.hailwood.inertiajs.settings.InertiaSettingsInterface"/>
+
+        <search.optionContributor implementation="nz.hailwood.inertiajs.settings.InertiaSearchableOptionContributor" />
+
+        <spellchecker.bundledDictionaryProvider implementation="nz.hailwood.inertiajs.dictionary.InertiaBundledDictionaryProvider"/>
 
     </extensions>
 

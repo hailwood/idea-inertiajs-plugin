@@ -45,11 +45,9 @@ class InertiaSettingsInterface(project: Project) : SearchableConfigurable {
     }
 
     @Suppress("DialogTitleCapitalization")
-    override fun getDisplayName(): String = "Inertia.js"
+    override fun getDisplayName(): String = InertiaBundle.message("settings.dialog.title")
 
-    override fun isModified(): Boolean {
-        return settings?.customInertiaPagesRoot != inertiaPagesRootField.text
-    }
+    override fun isModified(): Boolean = settings?.customInertiaPagesRoot != inertiaPagesRootField.text
 
     override fun apply() {
         settings?.customInertiaPagesRoot = inertiaPagesRootField.text
