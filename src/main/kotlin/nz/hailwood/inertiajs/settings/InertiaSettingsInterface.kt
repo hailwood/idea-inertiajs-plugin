@@ -41,7 +41,7 @@ class InertiaSettingsInterface(project: Project) : SearchableConfigurable {
 
         setupTextFieldDefaultValue(
             inertiaPagesRootField.textField,
-            FileUtil.toSystemIndependentName(settings.defaultInertiaPagesRoot(project))
+            FileUtil.toSystemDependentName(settings.defaultInertiaPagesRoot(project))
         )
     }
 
