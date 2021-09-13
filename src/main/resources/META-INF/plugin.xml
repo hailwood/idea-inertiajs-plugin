@@ -9,8 +9,8 @@
     <!-- https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
     <depends>com.intellij.modules.platform</depends>
     <depends>com.intellij.modules.lang</depends>
-    <depends>com.jetbrains.php</depends>
     <depends>JavaScript</depends>
+    <depends optional="true" config-file="nz.hailwood.inertiajs-php.xml">com.jetbrains.php</depends>
 
     <extensions defaultExtensionNs="com.intellij">
 
@@ -22,8 +22,6 @@
 
         <projectService serviceImplementation="nz.hailwood.inertiajs.settings.InertiaSettingsService"/>
 
-        <psi.referenceContributor implementation="nz.hailwood.inertiajs.navigation.InertiaPageReferenceContributor" language="PHP" order="first"/>
-
         <projectConfigurable parentId="language" instance="nz.hailwood.inertiajs.settings.InertiaSettingsInterface"
                              id="nz.hailwood.inertiajs.settings.InertiaSettingsInterface"/>
 
@@ -32,10 +30,6 @@
         <spellchecker.bundledDictionaryProvider implementation="nz.hailwood.inertiajs.dictionary.InertiaBundledDictionaryProvider"/>
 
     </extensions>
-
-
-    <applicationListeners>
-    </applicationListeners>
 
     <actions>
         <action id="nz.hailwood.inertiajs.settings.ShowSettingsAction" class="nz.hailwood.inertiajs.settings.ShowSettingsAction"/>
