@@ -30,7 +30,6 @@ class InertiaStartupActivity : StartupActivity.DumbAware {
                         .notify(project)
                 }
             }
-
         }.inSmartMode(project).submit(AppExecutorUtil.getAppExecutorService())
     }
 
