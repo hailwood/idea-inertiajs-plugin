@@ -28,6 +28,7 @@ val Project.isInertiaFromPackageJson: Boolean
         return PackageJsonUtil.findDependencyByName(packageJson as JsonFile, "@inertiajs/inertia") != null
     }
 
+@Suppress("unused")
 val Project.isNotInertia: Boolean
     get() = !this.isInertia
 

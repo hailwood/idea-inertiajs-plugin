@@ -23,7 +23,7 @@ class InertiaSettingsService : PersistentStateComponent<InertiaSettingsService> 
     }
 
     companion object {
-        fun getInstance(project: Project): InertiaSettingsService {
+        private fun getInstance(project: Project): InertiaSettingsService {
             return project.getService(InertiaSettingsService::class.java)
         }
 
