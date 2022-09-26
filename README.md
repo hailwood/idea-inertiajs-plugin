@@ -5,6 +5,11 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/17435.svg)](https://plugins.jetbrains.com/plugin/17435)
 
 <!-- Plugin description -->
+> **Note**
+> The [Laravel Idea plugin](https://laravel-idea.com/docs/inertia) provides all the features this plugin provides & more.  
+> Check it out as this plugin may be discontinued in the future.
+
+
 Provides support in PhpStorm and IntelliJ IDEA Ultimate for [Inertia.js](https://inertiajs.com/).
 
 
