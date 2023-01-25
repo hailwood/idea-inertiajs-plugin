@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+## [0.1.7]
+### Added
+- Support for new Inertia 1.0 package names
+
+## [0.1.6]
 ### Changed
 - Support for 2022.3 Preview
 - Sync with latest plugin template
