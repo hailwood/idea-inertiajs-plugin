@@ -25,7 +25,14 @@ val Project.isInertiaFromPackageJson: Boolean
     get() {
         val packageJsonVirtualFile = PackageJsonUtil.findChildPackageJsonFile(this.guessProjectDir()) ?: return false
         val packageJson = PsiManager.getInstance(this).findFile(packageJsonVirtualFile) ?: return false
-        return PackageJsonUtil.findDependencyByName(packageJson as JsonFile, "@inertiajs/inertia") != null
+        val inertiaPackages = listOf(
+            "@inertiajs/inertia",
+            "@inertia/react",
+            "@inertia/vue2",
+            "@inertia/vue3",
+            "@inertia/svelte"
+        )
+        return inertiaPackages.any { PackageJsonUtil.findDependencyByName(packageJson as JsonFile, it) != null }
     }
 
 @Suppress("unused")
