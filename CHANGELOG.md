@@ -4,7 +4,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
-### Changed 
+
+## [0.1.8] - 2023-01-30
+
+### Changed
 - Support for 2023.1 EAP
 
 ## [0.1.7]
@@ -49,7 +52,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Go to usages line marker on first line of Inertia pages
 - Settings page to set where Inertia pages are stored
 
-[Unreleased]: https://github.com/hailwood/idea-inertiajs-plugin/compare/v0.1.7...HEAD
+[Unreleased]: https://github.com/hailwood/idea-inertiajs-plugin/compare/v0.1.8...HEAD
+[0.1.8]: https://github.com/hailwood/idea-inertiajs-plugin/compare/v0.1.7...v0.1.8
 [0.1.7]: https://github.com/hailwood/idea-inertiajs-plugin/compare/v0.1.6...v0.1.7
 [0.1.6]: https://github.com/hailwood/idea-inertiajs-plugin/compare/v0.1.5...v0.1.6
 [0.1.5]: https://github.com/hailwood/idea-inertiajs-plugin/compare/v0.1.4...v0.1.5
